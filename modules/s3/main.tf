@@ -7,11 +7,6 @@ resource "aws_s3_bucket" "backend" {
   }
 }
 
-resource "aws_s3_bucket_acl" "backend" {
-  bucket = aws_s3_bucket.backend.id
-  acl    = "private"
-}
-
 resource "aws_s3_bucket_versioning" "versioning_backend" {
   bucket = aws_s3_bucket.backend.id
   versioning_configuration {
